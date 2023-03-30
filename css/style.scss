@@ -8,12 +8,11 @@
 @import "box_reset.scss";
 @import "fonts.scss";
 
-//import content
+//import resets
 @import "pop_up.scss";
 @import "header.scss";
 @import "page_content.scss";
 @import "footer.scss";
-
 
 #wrapper{
     @include set-wrapper-color($wrapper_color, $gold_color);
@@ -93,6 +92,7 @@ img {
     border-radius: 10px;
     margin-top:75px;
     width: 100%;
+    min-height: 70px;
 }
 
 #computer-dice-value{
@@ -103,6 +103,7 @@ img {
     border-radius: 10px;
     margin-top:75px;
     width: 100%;
+    min-height: 70px;
 }
 
 #winner{
