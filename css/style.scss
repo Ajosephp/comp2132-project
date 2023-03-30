@@ -1,42 +1,18 @@
 @charset "utf-8";
-/*
-SASS @import
-
-use import to load other SASS documents
-into a single file
-*/
-
-
-
-//import variable values
-
-
-//import your mixins  
-
 
 //import variable values
 @import "variables.scss";
-
-//import your mixins  
-
 
 //import resets
 @import "normalize.scss";
 @import "box_reset.scss";
 @import "fonts.scss";
 
-//import resets
+//import content
 @import "pop_up.scss";
 @import "header.scss";
 @import "page_content.scss";
 @import "footer.scss";
-
-
-//import wide screen media query styles
-
-
-
-//import wide screen media query styles
 
 
 #wrapper{
