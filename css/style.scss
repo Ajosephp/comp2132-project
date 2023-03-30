@@ -1,0 +1,260 @@
+@charset "utf-8";
+/*
+SASS @import
+
+use import to load other SASS documents
+into a single file
+*/
+
+
+
+//import variable values
+
+
+//import your mixins  
+
+
+//import variable values
+@import "variables.scss";
+
+//import your mixins  
+
+
+//import resets
+@import "normalize.scss";
+@import "box_reset.scss";
+@import "fonts.scss";
+
+//import resets
+@import "pop_up.scss";
+@import "header.scss";
+@import "page_content.scss";
+@import "footer.scss";
+
+
+//import wide screen media query styles
+
+
+
+//import wide screen media query styles
+
+
+#wrapper{
+    @include set-wrapper-color($wrapper_color, $gold_color);
+    max-width: 1224px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#wrapper > div {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.boxes {
+    justify-content: space-evenly;
+    column-gap: 10px;
+    margin-top: 25px; /* this is just to leave some space from top */
+    margin-bottom: 25px; /* this is to push the buttons container down */
+}
+
+.box {
+    border-radius:10px; /* round corners */
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    min-height: 300px;
+    max-width: 50%;
+    width: 45vw;
+}
+
+.images-container {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    border-radius:10px; /* round corners */
+    display: block;
+    min-width: 40px;
+    max-width: 15%;
+    margin: 0 auto;
+}
+
+.nameplates{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.player-buttons{
+    padding-bottom: 25px;
+    width: 100%;
+    justify-content: space-around;
+}
+.player-scores{
+    @include set-box-color($font_color, $primary_color);
+    width: 60%;
+    justify-content: center;
+    border-radius:10px; /* round corners */
+    padding-top: 5px;
+    margin-bottom: 25px;
+}
+
+#player-dice-value{
+    text-align: center;
+    border: 1px solid $wrapper_color;     
+    background-color: lighten($blue_color, 10%);
+    color: $font_color;
+    border-radius: 10px;
+    margin-top:75px;
+    width: 100%;
+}
+
+#computer-dice-value{
+    text-align: center;
+    border: 1px solid $wrapper_color;     
+    background-color: lighten($blue_color, 10%);
+    color: $font_color;
+    border-radius: 10px;
+    margin-top:75px;
+    width: 100%;
+}
+
+#winner{
+    display: none;
+    text-align: center;
+    @include set-box-color($font_color, $primary_color);
+    box-shadow: 0 0 0 2px $gold_color,
+		        0 0 0 4px $blue_color, 
+				0 0 0 8px $gold_color;
+    border-radius:10px; /* round corners */
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    min-height: 75px;
+    max-width: 50%;
+    width: 45vw;
+    margin-bottom: 25px;
+}
+
+.scoresheet{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9 em;
+    
+    border-radius: 5 px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);
+}
+
+.scoresheet thead tr{
+    background-color: darken($blue_color, 5%);
+    color: $font_color;
+    border-bottom: 1px solid $font_color;
+    text-align: left;
+    font-weight: bold;
+}
+
+.scoresheet th,
+.scoresheet td {
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+.scoresheet tbody tr.active-row {
+    font-weight: bold;
+    color: $gold_color;
+}
+
+.scoresheet tbody tr:nth-of-type(even){
+    background-color: lighten($blue_color, 10%);
+}
+
+.scoresheet tbody tr:last-of-type {
+    border-bottom: 2px solid $font_color;
+}
+
+button{
+    border-radius:10px; /* round corners */
+    background-color: $primary_color;
+    color: $font_color;
+    padding: 7px 9px;
+}
+
+button:active,
+button:hover {
+    color: $gold_color;
+    text-decoration: none;
+    border-radius:10px; /* round corners */
+}
+
+button:active,
+button:hover {
+    background-color: lighten($blue_color, 10%);
+}
+
+// Width!!
+@media screen and (max-width: 565px) {
+    .player-scores{
+        @include set-box-color($font_color, $primary_color);
+        width: 85%;
+        justify-content: center;
+        border-radius:10px; /* round corners */
+        padding-top: 5px;
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+
+    .boxes {
+        justify-content: space-evenly;
+        column-gap: 5px;
+        margin-top: 25px; /* this is just to leave some space from top */
+        margin-bottom: 25px; /* this is to push the buttons container down */
+    }
+
+    .box {
+        border-radius:10px; /* round corners */
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+        min-height: 300px;
+        max-width: 50%;
+        width: 50vw;
+    }
+    
+    table {width:100%;}
+
+    .scoresheet{
+        border-collapse: collapse;
+        margin: 0px 0;
+        font-size: 0.9 em;
+        border-radius: 5 px 5px 0 0;
+        overflow: hidden;
+    }
+    
+    .scoresheet th,
+    .scoresheet td {
+        padding: 2px 5px;
+        border-radius: 10px;
+    }
+
+    .player-scores{
+        @include set-box-color($font_color, $primary_color);
+        width: 95%;
+        justify-content: center;
+        border-radius:10px; /* round corners */
+        padding-top: 5px;
+        margin-bottom: 25px;
+    }
+ }
