@@ -3,7 +3,6 @@
     <!--
     author:		Andrew	
     date:		15/03/2023
-    student#:	a01325136
     ************************
     
     -->
@@ -13,6 +12,8 @@
             content="initial-scale=1.0, width=device-width" />
     <link   rel="stylesheet" 
             href="css/style.css"/>
+    <link   rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
 
     <!-- 
   load jQuery library first...
@@ -21,32 +22,172 @@
 <!-- 
   then utilize the jQuery library...
 -->
-    <script src=""
-            defer = "defer"></script>
+    <script src="scripts/pop-up.js" defer></script>
+    <script src="scripts/dice-game.js" defer></script>
+    
             
     <title>Final Project - COMP2132</title>
 </head>
 
 <body>
 
+    <section id='pop-up'>
+        <div>
+            <button id="close-pop-up">&#x2715</button>
+            <img src="image-icon/inverted-dice-1.png" alt="Dice Value 1">
+            <img src="image-icon/inverted-dice-2.png" alt="Dice Value 2">
+            <img src="image-icon/inverted-dice-3.png" alt="Dice Value 3">
+            <img src="image-icon/inverted-dice-4.png" alt="Dice Value 4">
+            <img src="image-icon/inverted-dice-5.png" alt="Dice Value 5">
+            <img src="image-icon/inverted-dice-6.png" alt="Dice Value 6">
+            <h2>Hello, User</h2>
+            <h4>Welcome to Dice Game! 
+                <br>
+                <br>
+                Instructions:
+            </h4>
+            <p><strong>To start:</strong> Click the "Roll Dices" button. You have three rounds to outscore your opponent!
+            <br>
+            <br>
+                After three rounds, the game is over and the total score is calculated.
+            <br>
+            <br>
+            If you want to play again, click the "New Game" option.
+            <br>
+            <strong>Best of luck!</strong>
+            </p>
+            <h4>Rules:</h4>
+            <p>Each round, you and the computer roll a pair of dice. Your score is based on the sum of the dice.
+            <br>
+            <br>
+                If you roll doubles (e.g. a 6 and a 6) then the dice sum is multiplied by 2!
+            <br>
+            <br>
+                Rolling a 1 on either dice gives you a score of 0 for that round.
+            <br>
+            </p>
+       </div>
+    </section>
     
-        <header>
-            <div class="container">
 
-            </div>
-    
+    <div id="wrapper">
+
+        <header class="header-container">
+            <h1>Dice Game</h1>
             <nav>
                 <ul>
-                    <li>
-                        <a href="index.html">How to Play</a>
-                    </li>
+                    <li><a id="start">Rules</a></li>
                 </ul>
             </nav>
         </header>
 
-        <article>
-            <img src="image-icon/inverted-dice-1.png" alt="">
-        </article>
+        <div class="boxes">
+
+            <div class="box">
+                <div class="images-container">
+                    <img id="player-dice-1" src="image-icon/inverted-dice-1.png" alt="Dice Value 1">
+                    <img id="player-dice-2" src="image-icon/inverted-dice-1.png" alt="Dice Value 1">
+                </div>
+                <div class="nameplates">
+                    <h2 id="player-name">You</h2>
+                </div>
+                <div id="player-dice-value"></div>
+            </div>
+
+            <div class="box">
+
+                <div class="images-container">
+                    <img id="computer-dice-1" src="image-icon/inverted-dice-1.png" alt="Dice Value 1">
+                    <img id="computer-dice-2" src="image-icon/inverted-dice-1.png" alt="Dice Value 1">
+                </div>
+
+                <div class="nameplates">
+                    <h2 id="computer-name">Computer</h2>
+                </div>
+
+                <div id="computer-dice-value"></div>
+            </div>
+
+        </div>
+    
+        <div class="player-buttons">
+            <button id="roll-dice">Roll Dices</button>
+            <button id="new-game">New Game</button>
+        </div>
+
+        <div class="player-scores">
+            <table class="scoresheet">
+                <thead>
+                  <tr>
+                    <th id="player-name">Player Name</th>
+                    <th>Score</th>
+                    <th id="computer-name">Computer Name</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Round One:</td>
+                    <td id="player-score1"></td>
+                    <td>Round One:</td>
+                    <td id="computer-score1"></td>
+                  </tr>
+                  <tr>
+                    <td>Round Two:</td>
+                    <td id="player-score2"></td>
+                    <td>Round Two:</td>
+                    <td id="computer-score2"></td>
+                  </tr>
+                  <tr>
+                    <td>Round Three:</td>
+                    <td id="player-score3"></td>
+                    <td>Round Three:</td>
+                    <td id="computer-score3"></td>
+                  </tr>
+                  <tr>
+                    <td>Total Score:</td>
+                    <td id="player-total"></td>
+                    <td>Total Score:</td>
+                    <td id="computer-total"></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+        <div id="winner"></div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-row">
+                    <div class="footer-col">
+                        <h4 id="title">Andrew Peterson - A01325136</h4>
+                        <small>COMP 2132 Final Project</small>
+                    </div>
+                        <div class="footer-col">
+                            <h4>Follow Me!</h4>
+                            <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a  href="https://www.linkedin.com/in/andrew-peterson-30405b26b"
+                                target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>More Projects</h4>
+                        <ul>
+                            <li><a  href="https://github.com/Ajosephp/comp2132-project.git"
+                                    target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
             
-    </body>
+</body>
+            
+</body>
 </html>
