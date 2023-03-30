@@ -52,6 +52,8 @@ var computerTotalScore = 0;
 
 //hide the winner initially
 winner.style.display = "none";
+playerDiceValue.style.display = "none";
+computerDiceValue.style.display = "none";
 
 function updateDiceValues(){
     diceOne.value = diceOne.rollDice();
@@ -66,6 +68,9 @@ function updateDiceValues(){
 }
 
 function updateDataLists(){
+
+    playerDiceValue.style.display = "block";
+    computerDiceValue.style.display = "block";
 
     const playerDataList = 
     `<ul>
@@ -180,6 +185,8 @@ function newGame(){
     playerTotalScoreHTML.innerHTML = "";
     computerTotalScoreHTML.innerHTML = "";
     winner.style.display = "none";
+    playerDiceValue.style.display = "none";
+    computerDiceValue.style.display = "none";
 }
 
 btnRollDice.addEventListener('click', function(){
@@ -200,4 +207,3 @@ btnNewGame.addEventListener('click', function(){
     diceThree.describeSelf("#computer-dice-1");
     diceFour.describeSelf("#computer-dice-2");
 });
-
